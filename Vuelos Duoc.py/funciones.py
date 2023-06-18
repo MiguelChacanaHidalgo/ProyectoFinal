@@ -1,11 +1,12 @@
-import numpy as np
+asientos = [[0] * 6 for _ in range(7)]
 
-def asientos():
- asientos = np.zeros((5,6))
- asientosVip = np.zeros((2,6))
-   
-
- print(asientos)
- print("  -------VIP------")
- print(asientosVip)
- return
+def mostrar_asientos():
+    print("Asientos disponibles:")
+    for i in range(len(asientos)):
+        for c in range(len(asientos[i])):
+            if asientos[i][c] == 0:
+                print(i * 6 + c + 1, end=" ")
+            else:
+                print("X", end=" ")
+        print()
+    print()
