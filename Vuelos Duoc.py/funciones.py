@@ -63,7 +63,7 @@ def comprar_asiento():
     print("Precio del pasaje:", precio)
     print()
 
-    def anular_vuelo():
+def anular_vuelo():
     asiento = int(input("Ingrese el número de asiento que desea anular: "))
 
     if asiento < 1 or asiento > 42 or asientos[(asiento - 1) // 6][(asiento - 1) % 6] == 0:
@@ -102,3 +102,5 @@ def modificar_datos():
         print("Opción inválida.")
 
     print()
+
+    
