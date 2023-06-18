@@ -62,3 +62,43 @@ def comprar_asiento():
     print("Banco del pasajero:", banco_pasajero)
     print("Precio del pasaje:", precio)
     print()
+
+    def anular_vuelo():
+    asiento = int(input("Ingrese el número de asiento que desea anular: "))
+
+    if asiento < 1 or asiento > 42 or asientos[(asiento - 1) // 6][(asiento - 1) % 6] == 0:
+        print("El asiento seleccionado no está ocupado.")
+        return
+
+    asientos[(asiento - 1) // 6][(asiento - 1) % 6] = 0
+    print("Asiento anulado con éxito.")
+    print()
+
+def modificar_datos():
+    asiento = int(input("Ingrese el número de asiento del pasajero: "))
+
+    if asiento < 1 or asiento > 42 or asientos[(asiento - 1) // 6][(asiento - 1) % 6] == 0:
+        print("El asiento seleccionado no está ocupado.")
+        return
+
+    rut_pasajero = input("Ingrese el RUT del pasajero para verificar los datos: ")
+
+    if rut_pasajero != "123456789":  
+        print("El RUT ingresado no coincide con los datos del pasajero.")
+        return
+
+    print("Seleccione el dato que desea modificar:")
+    print("1. Nombre del pasajero")
+    print("2. Teléfono del pasajero")
+    opcion = int(input("Opción: "))
+
+    if opcion == 1:
+        nuevo_nombre = input("Ingrese el nuevo nombre del pasajero: ")
+        print("Nombre del pasajero actualizado con éxito.")
+    elif opcion == 2:
+        nuevo_telefono = input("Ingrese el nuevo teléfono del pasajero: ")
+        print("Teléfono del pasajero actualizado con éxito.")
+    else:
+        print("Opción inválida.")
+
+    print()
